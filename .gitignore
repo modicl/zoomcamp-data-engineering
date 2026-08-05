@@ -1,0 +1,41 @@
+# --- Secretos y credenciales ---
+*.env
+.env
+.env.*
+!.env.example
+keys/*.json
+# airflow-init la regenera automáticamente en el primer "docker compose up";
+# contiene fernet_key y secret_key en texto plano, no debe subirse.
+config/airflow.cfg
+
+# --- Config local de Claude Code ---
+.claude/**
+
+# --- Artefactos de runtime de Airflow ---
+logs/**
+airflow.db
+standalone_admin_password.txt
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- dbt (futuro) ---
+dbt/target/
+dbt/dbt_packages/
+dbt/dbt_modules/
+dbt/logs/
+dbt/.user.yml
+dbt/profiles.yml
+
+# --- SO / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
