@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw_data
+    description: "Raw data from the taxi dataset"
+    database: comparafit # nombre del proyecto google cloud
+    schema: zoomcamp_taxis # nombre del dataset bigquery
+    tables:
+      - name: green_tripdata_materialized
+      - name: yellow_tripdata_materialized
