@@ -20,7 +20,9 @@ select
                 "pickup_location_id",
                 "dropoff_location_id",
                 "passenger_count",
-                "trip_distance"
+                "trip_distance",
+                "total_amount",
+                "pt.description"
             ]
         )
     }} as trip_id,
@@ -43,5 +45,7 @@ select
     improvement_surcharge,
     total_amount,
     pt.description as payment_type,
+    {{ get_is_chargeback('total_amount') }} as is_chargeback
+    
 from trips_unioned as fct_trips
 left join payment_types as pt on fct_trips.payment_type = pt.payment_type

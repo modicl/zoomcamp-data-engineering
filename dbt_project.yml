@@ -44,4 +44,4 @@ models:
   zoomcamp_taxis:
     # Applies to all files under models/example/
     example:
-      +materialized: table
+      +materialized: "{{ 'table' if target.name == 'prod' else 'view' }}"
