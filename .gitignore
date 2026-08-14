@@ -48,3 +48,11 @@ logs/
 # end dbt Cloud content
 
 dbt.exe
+
+# --- Spark (particionamiento CSV) ---
+spark/*.csv
+spark/hadoop-winutils/
+spark/output/
+
+# -- Archivos especificos ---
+2021_Yellow_Taxi_Trip_Data_20260814.csv
